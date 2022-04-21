@@ -9,17 +9,17 @@
 </head>
 <body>
 	
-	<form action="toDoList.jsp">
+	<form action="sesssionExample.jsp">
 			Add new item : 
 			<input type="text" name="item"/>
 			<input type="submit" value="submit"/>
 		
 	</form>    <!-- SessionVar and SessionVar1 -->
 	<%
-		List<String> itemList = (List<String>) session.getAttribute("listItem");
+		List<String> itemList = (List<String>) session.getAttribute("sessionVar");
 		if(itemList == null){
 			itemList = new ArrayList<String>();
-			session.setAttribute("ListItem",itemList);
+			session.setAttribute("sessionVar",itemList);
 		}
 		String item = request.getParameter("item");
 		boolean isListNotEmpty = item!=null && item.trim().length()>0;
